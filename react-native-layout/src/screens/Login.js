@@ -1,6 +1,7 @@
-import {StyleSheet, View } from 'react-native'
+import {StyleSheet, View, Text } from 'react-native'
+import Button from '../components/Button'
 
-export default function Login () {
+export default function Login ({ goToSignup }) {
     return (
         <View style={styles.container}>
 
@@ -16,7 +17,11 @@ export default function Login () {
 
             {/* Footer */}
             <View style={styles.footer}>
-
+                <Button buttonText="LOG IN"></Button>
+                <View style={styles.signup}>
+                    <Text>Don't have an account? </Text>
+                    <Text style={styles.link} onPress={goToSignup}>Sign up</Text>
+                </View>
             </View>
 
         </View>
@@ -42,7 +47,18 @@ const styles = StyleSheet.create({
 
   footer: {
     flex: 1,
-    backgroundColor: 'green'
+    alignItems: 'center',
+    backgroundColor: '#F3F3F3'
+  },
+
+  signup: {
+    flexDirection: 'row',
+    marginTop: 10
+  },
+  
+  link: {
+    color: "#1a88b0",
+    fontWeight: 600
   },
 
 })

@@ -1,6 +1,7 @@
-import {StyleSheet, View } from 'react-native'
+import {StyleSheet, View, Text } from 'react-native'
+import Button from '../components/Button'
 
-export default function Signup () {
+export default function Signup ({ goToLogin }) {
     return (
         <View style={styles.container}>
 
@@ -9,6 +10,7 @@ export default function Signup () {
 
             </View>
 
+
             {/* Content Section */}
             <View style={styles.contentSection}>
 
@@ -16,7 +18,11 @@ export default function Signup () {
 
             {/* Footer */}
             <View style={styles.footer}>
-
+                <Button buttonText="SIGN UP"></Button>
+                <View style={styles.signup}>
+                    <Text>Already have an account? </Text>
+                    <Text style={styles.link} onPress={goToLogin}>Log in</Text>
+                </View>
             </View>
 
         </View>
@@ -42,7 +48,18 @@ const styles = StyleSheet.create({
 
   footer: {
     flex: 1,
-    backgroundColor: 'green'
+    alignItems: 'center',
+    backgroundColor: '#F3F3F3'
+  },
+
+  signup: {
+    flexDirection: 'row',
+    marginTop: 10
+  },
+  
+  link: {
+    color: "#1a88b0",
+    fontWeight: 600
   },
 
 })
