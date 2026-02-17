@@ -8,7 +8,7 @@ export default function Signup ({ goToLogin }) {
 
             {/* Header */}
             <View style={styles.header}>
-              <Image style={styles.loginlogo} source={require('../../assets/login.png')} />
+              <Image style={styles.signuplogo} source={require('../../assets/signup.png')} />
               <Text style={styles.title}>Sign Up</Text>
             </View>
 
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     fontWeight: 600
   },
 
-  loginlogo: {
+  signuplogo: {
     width: 200,
     height: 200
   },
