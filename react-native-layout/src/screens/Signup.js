@@ -1,5 +1,6 @@
 import {StyleSheet, View, Text, Image} from 'react-native'
 import Button from '../components/Button'
+import InputContainer from '../components/InputContainer'
 
 export default function Signup ({ goToLogin }) {
     return (
@@ -13,18 +14,21 @@ export default function Signup ({ goToLogin }) {
 
             {/* Content Section */}
             <View style={styles.contentSection}>
-
+                <InputContainer iconName="person-outline" iconSize={30} label="Name" placeholder="Enter your Name" />
+                <InputContainer iconName="mail-outline" iconSize={30} label="Email" placeholder="Enter your email" />
+                <InputContainer iconName="lock-closed-outline" iconSize={30} label="Password" placeholder="Enter your password" secureTextEntry={true} />
+                <InputContainer iconName="lock-closed-outline" iconSize={30} label="Confirm Password" placeholder="Confirm your password" secureTextEntry={true} />
             </View>
 
             {/* Footer */}
             <View style={styles.footer}>
-                <Button buttonText="SIGN UP"></Button>
-                <View style={styles.signup}>
-                    <Text>Already have an account? </Text>
-                    <Text style={styles.link} onPress={goToLogin}>Log in</Text>
-                </View>
+              <Button buttonText="SIGN UP"></Button>
+              <View style={styles.signup}>
+                  <Text>Already have an account? </Text>
+                  <Text style={styles.link} onPress={goToLogin}>Log in</Text>
+              </View>
             </View>
-
+            
         </View>
     );
 }
@@ -43,8 +47,9 @@ const styles = StyleSheet.create({
   },
 
   contentSection: {
-    flex: 1,
-    backgroundColor: 'blue'
+    flex: 1.5,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
 
   footer: {

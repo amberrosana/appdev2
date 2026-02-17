@@ -1,5 +1,6 @@
 import {StyleSheet, View, Text, Image } from 'react-native'
 import Button from '../components/Button'
+import InputContainer from '../components/InputContainer'
 
 export default function Login ({ goToSignup }) {
     return (
@@ -7,22 +8,23 @@ export default function Login ({ goToSignup }) {
 
             {/* Header */}
             <View style={styles.header}>
-                <Image style={styles.loginlogo} source={require('../../assets/login.png')} />
-                <Text style={styles.title}>Log In</Text>
+              <Image style={styles.loginlogo} source={require('../../assets/login.png')} />
+              <Text style={styles.title}>Log In</Text>
             </View>
 
             {/* Content Section */}
             <View style={styles.contentSection}>
-
+                <InputContainer iconName="mail-outline" iconSize={30} label="Email" placeholder="Enter your email" />
+                <InputContainer iconName="lock-closed-outline" iconSize={30} label="Password" placeholder="Enter your password" secureTextEntry={true} />
             </View>
 
             {/* Footer */}
             <View style={styles.footer}>
-                <Button buttonText="LOG IN"></Button>
-                <View style={styles.signup}>
-                    <Text>Don't have an account? </Text>
-                    <Text style={styles.link} onPress={goToSignup}>Sign up</Text>
-                </View>
+              <Button buttonText="LOG IN"></Button>
+              <View style={styles.signup}>
+                  <Text>Don't have an account? </Text>
+                  <Text style={styles.link} onPress={goToSignup}>Sign up</Text>
+              </View>
             </View>
 
         </View>
@@ -43,8 +45,9 @@ const styles = StyleSheet.create({
   },
 
   contentSection: {
-    flex: 1,
-    backgroundColor: 'blue'
+    flex: 1.5,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
 
   footer: {
