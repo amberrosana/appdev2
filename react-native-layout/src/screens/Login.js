@@ -1,4 +1,4 @@
-import {StyleSheet, View, Text } from 'react-native'
+import {StyleSheet, View, Text, Image } from 'react-native'
 import Button from '../components/Button'
 
 export default function Login ({ goToSignup }) {
@@ -7,7 +7,8 @@ export default function Login ({ goToSignup }) {
 
             {/* Header */}
             <View style={styles.header}>
-
+                <Image style={styles.loginlogo} source={require('../../assets/login.png')} />
+                <Text style={styles.title}>Log In</Text>
             </View>
 
             {/* Content Section */}
@@ -37,7 +38,8 @@ const styles = StyleSheet.create({
 
   header: {
     flex: 1,
-    backgroundColor: 'red'
+    alignItems: 'center',
+    justifyContent: 'flex-end'
   },
 
   contentSection: {
@@ -59,6 +61,17 @@ const styles = StyleSheet.create({
   link: {
     color: "#1a88b0",
     fontWeight: 600
+  },
+
+  loginlogo: {
+    width: 200,
+    height: 200
+  },
+  
+  title: {
+    fontSize: 40,
+    fontWeight: 900,
+    color: '#333'
   },
 
 })
