@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     
   container: {
     flex: 1,
-    backgroundColor: '#F3F3F3'
+    backgroundColor: '#cbf1ff'
   },
 
   header: {
@@ -53,7 +53,6 @@ const styles = StyleSheet.create({
   footer: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: '#F3F3F3'
   },
 
   signup: {
@@ -67,8 +66,8 @@ const styles = StyleSheet.create({
   },
 
   loginlogo: {
-    width: 200,
-    height: 200
+    width: 100,
+    height: 100
   },
   
   title: {
