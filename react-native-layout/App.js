@@ -1,6 +1,7 @@
 import { StyleSheet, View } from 'react-native';
-import Login from './src/screens/Login'
+import Login from './src/screens/Login';
 import Signup from './src/screens/Signup';
+import Todo from './src/screens/Todo';
 import { useState } from 'react';
 
 export default function App() {
@@ -8,16 +9,21 @@ export default function App() {
 
   const goToSignup = () => {
     setScreen('signup');
-  };  
+  };
 
   const goToLogin = () => {
     setScreen('login');
   };
 
+  const goToTodo = () => {
+    setScreen('todo');
+  };
+
   return (
     <View style={styles.container}>
-      {screen === 'login' && <Login goToSignup={goToSignup} />}
-      {screen === 'signup' && <Signup goToLogin={goToLogin} />}
+      {screen === 'login' && <Login goToSignup={goToSignup} goToTodo={goToTodo} />}
+      {screen === 'signup' && <Signup goToLogin={goToLogin} goToTodo={goToTodo} />}
+      {screen === 'todo' && <Todo goToLogin={goToLogin} />}
     </View>
   );
 }

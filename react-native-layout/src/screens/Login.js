@@ -2,7 +2,7 @@ import {StyleSheet, View, Text, Image } from 'react-native'
 import Button from '../components/Button'
 import InputContainer from '../components/InputContainer'
 
-export default function Login ({ goToSignup }) {
+export default function Login ({ goToSignup, goToTodo }) {
     return (
         <View style={styles.container}>
 
@@ -20,7 +20,7 @@ export default function Login ({ goToSignup }) {
 
             {/* Footer */}
             <View style={styles.footer}>
-              <Button buttonText="LOG IN"></Button>
+              <Button buttonText="LOG IN" onPress={goToTodo}></Button>
               <View style={styles.signup}>
                   <Text>Don't have an account? </Text>
                   <Text style={styles.link} onPress={goToSignup}>Sign up</Text>
